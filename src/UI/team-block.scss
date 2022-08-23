@@ -1,0 +1,21 @@
+.team-block {
+  padding: 2.4rem;
+  min-height: 35rem;
+  box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.17);
+  border-radius: 0.4rem;
+
+  h4 {
+    margin-bottom: 1.5rem;
+    color: var(--pink-dark);
+
+    &:before {
+      top: 0.28rem;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: #{$i / 2 - 0.5}s;
+    }
+  }
+}

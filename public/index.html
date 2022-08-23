@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+  <script>
+    var Site = {
+        isVisited: 1,
+        onload: document.addEventListener('DOMContentLoaded', function () {
+          Site.init();
+        }),
+        init: function init() {
+          this.headerBurger();
+          this.headerScroll(); // this.splitAnim();
+
+          this.accordion();
+          this.libsInit();
+          // this.sectionObserver();
+        },
+        headerBurger: function headerBurger() {
+          var burgerLine = document.querySelector('.header__burger');
+          var offCanvas = document.querySelector('.header__nav');
+          var appLayout = document.querySelector('.app');
+          burgerLine.addEventListener('click', function () {
+            if (burgerLine.classList.contains('open')) {
+              burgerLine.classList.remove('open');
+            } else {
+              burgerLine.classList.add('open');
+            }
+
+            if (offCanvas.classList.contains('open')) {
+              offCanvas.classList.remove('open');
+            } else {
+              offCanvas.classList.add('open');
+            }
+
+            if (appLayout.classList.contains('overlay')) {
+              appLayout.classList.remove('overlay');
+            } else {
+              appLayout.classList.add('overlay');
+            }
+          });
+        },
+        headerScroll: function headerScroll() {
+          window.onscroll = function () {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              document.querySelector(".header").classList.add("header_scrolled");
+            } else {
+              document.querySelector("header").classList.remove("header_scrolled");
+            }
+          };
+        },
+        // splitAnim: ()=> {
+        // 	gsap.registerPlugin(SplitText);
+        //
+        // 	var tl = gsap.timeline(),
+        // 		mySplitText = new SplitText(".split-animation", { type: "chars" }),
+        // 		chars = mySplitText.chars;
+        //
+        // 	gsap.set(".split-animation", { perspective: 400 });
+        //
+        // 	tl.from(chars, {
+        // 		duration: 0.45,
+        // 		opacity: 0,
+        // 		y: 50,
+        // 		transformOrigin: "50% 50%",
+        // 		ease: "back",
+        // 		stagger: 0.07
+        // 	});
+        //
+        // },
+        accordion: function accordion() {
+          var accordionItems = document.querySelectorAll(".accordion");
+
+          var _loop = function _loop(i) {
+            accordionItems[i].addEventListener("click", function (e) {
+              // e.preventDefault();
+              for (var k = 0; k < accordionItems.length; k++) {
+                accordionItems[k].classList.remove("open");
+              }
+
+              accordionItems[i].classList.add("open");
+            });
+          };
+
+          for (var i = 0; i < accordionItems.length; i++) {
+            _loop(i);
+          }
+        },
+        libsInit: function libsInit() {
+          new WOW().init({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true,
+            scrollContainer: null,
+            resetAnimation: true
+          });
+        },
+        // sectionObserver: function sectionObserver() {
+        //   var sections = document.querySelectorAll('section');
+        //   var links = document.querySelectorAll('.header__nav ul li a');
+        //   var observer = new IntersectionObserver(handler);
+        //   sections.forEach(function (item) {
+        //     observer.observe(item);
+        //   });
+        //
+        //   function handler(entries) {
+        //     for (var i = 0; i < links.length; i++) {
+        //       var _iteratorNormalCompletion = true;
+        //       var _didIteratorError = false;
+        //       var _iteratorError = undefined;
+        //
+        //       try {
+        //         for (var _iterator = entries[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        //           entry = _step.value;
+        //
+        //           if (entry.isIntersecting && '#' + entry.target.id == links[i].hash) {
+        //             links.forEach(function (link) {
+        //               link.classList.remove('active');
+        //             });
+        //             links[i].classList.add('active');
+        //           }
+        //         }
+        //       } catch (err) {
+        //         _didIteratorError = true;
+        //         _iteratorError = err;
+        //       } finally {
+        //         try {
+        //           if (!_iteratorNormalCompletion && _iterator.return != null) {
+        //             _iterator.return();
+        //           }
+        //         } finally {
+        //           if (_didIteratorError) {
+        //             throw _iteratorError;
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+      };
+
+
+      setTimeout(() => {
+        const video1 = document.querySelector('video')
+        console.log(video1)
+        video1.addEventListener("ended", function () {
+          video1.removeAttribute('autoplay')
+          this.src = this.src
+        });
+      }, 1000)
+
+  </script>
+</html>

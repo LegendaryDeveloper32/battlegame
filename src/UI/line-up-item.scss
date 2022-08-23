@@ -1,0 +1,150 @@
+.line-up-item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5rem;
+
+  &:last-of-type {
+    padding-bottom: 0;
+
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-of-type(5) {
+    .line-up-item__description {
+      padding-bottom: 60rem;
+
+      @media (max-width: 450px) {
+        padding-bottom: 25rem;
+      }
+
+      @media (max-width: 380px) {
+        padding-bottom: 20rem;
+      }
+
+      @media (max-width: 350px) {
+        padding-bottom: 15rem;
+      }
+
+      &:before {
+        height: 12%;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        width: 0.1rem;
+        background: var(--pink-dark);
+        height: 30%;
+
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    margin-bottom: 2rem;
+
+    @media (max-width: 450px) {
+      top: -1.5rem;
+      left: 0;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 4.8rem;
+      color: #cb94ff;
+
+      @media (max-width: 450px) {
+        font-size: 3.8rem;
+      }
+
+      @media (max-width: 350px) {
+        font-size: 3.2rem;
+      }
+
+      &:before {
+        top: -0.2rem;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+    width: calc(100% - 5.4rem);
+    padding-left: 9.2rem;
+    padding-bottom: 3rem;
+    margin-left: 3rem;
+
+    @media (max-width: 450px) {
+      padding-left: 4.2rem;
+      width: 100%;
+
+      h4 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 350px) {
+      padding-left: 2.8rem;
+    }
+
+    p {
+      margin-bottom: 0;
+
+      strong {
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        font-weight: 400;
+
+        @media (max-width: 450px) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    h4 {
+      margin-bottom: 5rem;
+      letter-spacing: 0.1rem;
+
+      @media (max-width: 450px) {
+        margin-bottom: 3rem;
+      }
+
+      strong {
+        letter-spacing: 0.2rem;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0.1rem;
+      background: var(--pink-dark);
+      height: calc(100% - 7rem);
+
+      @media (max-width: 450px) {
+        display: none;
+      }
+    }
+  }
+
+  &:nth-of-type(11) {
+    .line-up-item__description {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

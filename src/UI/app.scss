@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "Briller";
+  src: url("./fonts/Briller-Bold.woff2") format("woff2"),
+    url("./fonts/Briller-Bold.woff") format("woff"),
+    url("./fonts/Briller-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Briller";
+  src: url("./fonts/Briller-Black.eot") format("eot"),
+    url("./fonts/Briller-Black.woff") format("woff"),
+    url("./fonts/Briller-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "halogen-regular";
+  src: url("./fonts/halogen-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html *,
+html *:after,
+html *:before {
+  box-sizing: inherit;
+}
+
+:root {
+  --main-color: #000000;
+  --pink-light: #f5cdf9;
+  --pink-dark: #ff8de4;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-color);
+  font-family: "Halogen-Regular";
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 1.5;
+  &.loaded {
+    .start-loader {
+      display: none;
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.app {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background: var(--main-color);
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.31);
+    opacity: 0;
+    z-index: -5;
+    transition: 0.4s ease-in-out;
+  }
+
+  &.overlay {
+    &:after {
+      opacity: 1;
+      z-index: 5;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Briller";
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.32;
+  text-transform: uppercase;
+
+  strong {
+    font-weight: inherit;
+  }
+}
+
+h1 {
+  font-size: 7rem;
+
+  @media (max-width: 1024px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 2.4rem;
+  }
+}
+
+h2 {
+  position: relative;
+  margin-bottom: 3.5rem;
+  font-size: 5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  margin-bottom: 4rem;
+  font-size: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 3.4rem;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 2.1rem;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+h4 {
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  font-size: 3.2rem;
+  font-style: italic;
+  line-height: 1.16;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 2rem;
+  font-weight: 500;
+
+  @media (max-width: 450px) {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+//section {
+//	padding: 5.6rem 0;
+//}
+
+p {
+  margin: 0 0 3rem 0;
+
+  @media (max-width: 350px) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+strong {
+  color: var(--pink-dark);
+}
+
+//.bulk-text {
+//	position: relative;
+//
+//	&:before {
+//		content: var(--text-content);
+//		position: absolute;
+//		top: .5rem;
+//		left: 0;
+//		color: transparent;
+//		-webkit-text-stroke: 0.1rem var(--pink-dark);
+//
+//		@media (max-width: 450px) {
+//			top: .3rem;
+//		}
+//	}
+//}
+
+.mobile-br {
+  display: none;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
+}
+
+.desktop-br {
+  display: block;
+
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+
+.mint {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}

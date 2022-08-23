@@ -1,0 +1,42 @@
+.cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--main-color);
+  box-shadow: 0 -1.5rem 2.8rem rgba(0, 0, 0, 0.17);
+  z-index: 20;
+  transform: translateY(100%);
+  transition: 0.4s ease-in-out;
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  &__buttons {
+    display: flex;
+
+    .buy-button {
+      margin: 0;
+
+      &:first-of-type {
+        margin: 0 2rem 0 0;
+
+        @media (max-width: 450px) {
+          margin: 0 0 2rem 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.section-title {
+  position: relative;
+  margin-bottom: 5.6rem;
+  text-align: center;
+
+  @media (max-width: 450px) {
+    margin-bottom: 0;
+  }
+
+  &__big {
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.36em;
+    line-height: 1.21em;
+    color: #0c6495;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+
+    @media (max-width: 450px) {
+      margin-bottom: 2.4rem;
+    }
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //color: white;
+    //transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,98 @@
+/*.App {*/
+/*  text-align: center;*/
+/*}*/
+
+/*.App-logo {*/
+/*  height: 40vmin;*/
+/*  pointer-events: none;*/
+/*}*/
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  .App-logo {*/
+/*    animation: App-logo-spin infinite 20s linear;*/
+/*  }*/
+/*}*/
+
+/*.App-header {*/
+/*  background-color: #282c34;*/
+/*  min-height: 100vh;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  font-size: calc(10px + 2vmin);*/
+/*  color: white;*/
+/*}*/
+
+/*.App-link {*/
+/*  color: #61dafb;*/
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
+
+/*.btn-funky-moon {*/
+/*  height: 40px;*/
+/*  margin: 2px;*/
+/*  background: #A770EF;  !* fallback for old browsers *!*/
+/*  background: linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+/*  color: #fff;*/
+/*  border: 2px solid #eee;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.btn-left-rounded {*/
+/*  border-bottom-left-radius: 35px;*/
+/*  border-top-left-radius: 35px;*/
+/*}*/
+
+/*.btn-right-rounded {*/
+/*  border-bottom-right-radius: 35px;*/
+/*  border-top-right-radius: 35px;*/
+/*}*/
+
+@import "../src/UI/app.scss";
+@import "../src/UI/about-us.scss";
+@import "../src/UI/articles.scss";
+@import "../src/UI/accordion.scss";
+@import "../src/UI/buy-button.scss";
+@import "../src/UI/container.scss";
+@import "../src/UI/faq.scss";
+@import "../src/UI/footer.scss";
+@import "../src/UI/header.scss";
+@import "../src/UI/hero.scss";
+@import "../src/UI/line-up.scss";
+@import "../src/UI/line-up-item.scss";
+@import "../src/UI/main-button.scss";
+@import "../src/UI/our-story.scss";
+@import "../src/UI/roadmap.scss";
+@import "../src/UI/section-separator.scss";
+@import "../src/UI/section-title.scss";
+@import "../src/UI/team.scss";
+@import "../src/UI/team-block.scss";
+@import "../src/UI/team-text-block.scss";
+@import "../src/UI/tokenomics.scss";
+@import "../src/UI/cookies.scss";
+
+.buy-buttons {
+  display: flex;
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .buy-button {
+    &:first-of-type {
+      margin-right: 2rem;
+      @media (max-width: 768px) {
+        margin-bottom: 2rem;
+        margin-right: 0;
+      }
+    }
+  }
+}

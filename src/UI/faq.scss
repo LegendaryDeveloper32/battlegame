@@ -1,0 +1,57 @@
+.faq {
+  position: relative;
+
+  .container {
+    position: relative;
+  }
+
+  &__list {
+    position: relative;
+    margin-bottom: 6.4rem;
+    z-index: 1;
+  }
+
+  &__bottom-text {
+    width: 74rem;
+
+    @media (max-width: 450px) {
+      width: auto;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    height: 100% !important;
+
+    @media (max-width: 450px) {
+      max-width: 500%;
+      width: auto;
+      object-fit: cover;
+      height: 100% !important;
+    }
+  }
+
+  &__socials {
+    position: relative;
+    padding: 7rem 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
+    li {
+      a {
+        svg {
+          height: 3.3rem;
+        }
+      }
+    }
+
+    @media (min-width: 451px) {
+      display: none;
+    }
+  }
+}
